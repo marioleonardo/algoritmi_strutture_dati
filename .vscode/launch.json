@@ -1,0 +1,47 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+    {
+        "type": "gdb",
+        "request": "launch",
+        "name": "Launch Program (SSH)",
+        "target": "./bin/executable",
+        "cwd": "${workspaceRoot}",
+        "ssh": {
+            "host": "127.0.0.1",
+            "cwd": "/home/remote_user/project/",
+            "keyfile": "/home/my_user/.ssh/id_rsa",
+            "user": "remote_user"
+        },
+        "valuesFormatting": "parseText"
+    },
+        
+
+
+
+        {
+            "preLaunchTask": "mario",
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${fileDirname}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Abilita la riformattazione per gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ]
+        }
+    ]
+}
